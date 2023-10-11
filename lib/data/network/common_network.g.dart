@@ -19,7 +19,7 @@ class _CommonNetwork implements CommonNetwork {
   String? baseUrl;
 
   @override
-  Future<TokenResponse> refreshToken(refreshToken) async {
+  Future<TokenResponse> refreshToken(String? refreshToken) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
@@ -38,7 +38,11 @@ class _CommonNetwork implements CommonNetwork {
               queryParameters: queryParameters,
               data: _data,
             )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = TokenResponse.fromJson(_result.data!);
     return value;
   }
@@ -54,5 +58,22 @@ class _CommonNetwork implements CommonNetwork {
       }
     }
     return requestOptions;
+  }
+
+  String _combineBaseUrls(
+    String dioBaseUrl,
+    String? baseUrl,
+  ) {
+    if (baseUrl == null || baseUrl.trim().isEmpty) {
+      return dioBaseUrl;
+    }
+
+    final url = Uri.parse(baseUrl);
+
+    if (url.isAbsolute) {
+      return url.toString();
+    }
+
+    return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }

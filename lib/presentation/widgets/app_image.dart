@@ -12,14 +12,14 @@ import '../theme/app_theme.dart';
 /// Widget for showing image with caching, blurhash and error image
 class AppImage extends StatefulWidget {
   const AppImage({
-    required this.image,
-    required this.borderRadius,
     required this.size,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+    this.image,
+    this.borderRadius = BorderRadius.zero
+  });
 
   final img_ent.Image? image;
-  final BorderRadius? borderRadius;
+  final BorderRadiusGeometry borderRadius;
   final Size size;
 
   @override
