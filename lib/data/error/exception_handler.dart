@@ -3,11 +3,12 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../app/env/env.dart';
+import '../../app/app.dart';
+import '../../app/app_configuration.dart';
+import '../../app/injection/injection.dart';
 import '../../app/router/app_router.gr.dart';
 import '../../domain/entities/auth/token.dart';
 import '../../domain/errors/app_error.dart';
-import '../../main.dart';
 import '../local/keys.dart';
 import '../local/preferences.dart';
 import '../mappers/mapper.dart';
@@ -53,9 +54,9 @@ class ExceptionHandler {
           }
           retry();
         } on Exception catch (exception) {
-          final error = _errorMapper.map(exception);
-          if (error.isAuth) await appRouter.replaceAll([const AuthRoute()]);
-          return Left(error);
+          // final error = _errorMapper.map(exception);
+          // if (error.isAuth) await appRouter.replaceAll([const AuthRoute()]);
+          // return Left(error);
         }
       }
       return Left(error);
@@ -66,10 +67,10 @@ class ExceptionHandler {
   }
 
   void _log(Object e, StackTrace s, {bool obj = false}) {
-    if (Env.value.writeLogs) {
-      print('=== Exception${obj ? ' (App Error)' : ''} ===');
-      print(e);
-      print(s);
-    }
+    // if (getIt<AppConfiguration>.writeLogs) {
+    //   print('=== Exception${obj ? ' (App Error)' : ''} ===');
+    //   print(e);
+    //   print(s);
+    // }
   }
 }

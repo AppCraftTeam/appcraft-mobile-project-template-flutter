@@ -9,8 +9,6 @@ class AppRouter extends $AppRouter {
 
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(page: StartScreen.page, path: '/'),
-    AutoRoute(page: ProductDetailRoute.page),
-    AutoRoute(page: AuthRoute.page),
+    AutoRoute(path: '/', page: WipRoute.page, initial: true)
   ];
 }
