@@ -4,7 +4,6 @@ import 'app.dart';
 import 'app_configuration.dart';
 
 // Запуск приложения в PROD окружении. Используется для релиза приложения в сторах.
-
 Future<void> main() async => App.run(AppENV.prod);
 
 @Environment(AppENV.prod)

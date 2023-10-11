@@ -4,7 +4,6 @@ import 'app.dart';
 import 'app_configuration.dart';
 
 // Запуск приложения в STAGE окружении. Используется для тестрования и передачи заказчику.
-
 Future<void> main() async => App.run(AppENV.stage);
 
 @Environment(AppENV.stage)

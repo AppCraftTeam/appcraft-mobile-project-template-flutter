@@ -8,8 +8,8 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:app_name/presentation/modules/wip/wip_page.dart' as _i1;
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:templateflutter/presentation/modules/wip/wip_page.dart' as _i1;
 
 abstract class $AppRouter extends _i2.RootStackRouter {
   $AppRouter({super.navigatorKey});

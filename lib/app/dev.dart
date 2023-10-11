@@ -4,10 +4,8 @@ import 'app.dart';
 import 'app_configuration.dart';
 
 // Запуск приложения в DEV окружении. Используется для разработки.
-
 Future<void> main() async => App.run(AppENV.dev);
 
-// @dev
 @Environment(AppENV.dev)
 @LazySingleton(as: AppConfiguration)
 class DevAppConfiguration implements AppConfiguration {
