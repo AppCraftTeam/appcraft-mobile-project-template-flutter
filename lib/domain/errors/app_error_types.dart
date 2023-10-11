@@ -1,0 +1,23 @@
+enum AppErrorType {
+  unknownError,
+  somethingWentWrong,
+  serverIsNotAvailable,
+  connectionTimeout,
+  connectionError,
+  apiResponseParsingError,
+  badRequest,
+  accessTokenError,
+  forbidden,
+  resourceNotFound,
+  methodNotAllowed,
+  internalServerError,
+  badGateway,
+
+  userAlreadyExists,
+  profileMediaLimitExhausted,
+  alreadyRequestedOrCounterParty,
+  youAreNotDealParty,
+  alreadySubscribed,
+  alreadyRated,
+  tokenInBlackList,
+}

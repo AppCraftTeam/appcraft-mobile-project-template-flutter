@@ -1,0 +1,16 @@
+import 'package:auto_route/auto_route.dart';
+
+import 'app_router.gr.dart';
+
+@AutoRouterConfig(replaceInRouteName: 'Page,Route')
+class AppRouter extends $AppRouter {
+  @override
+  RouteType get defaultRouteType => const RouteType.material();
+
+  @override
+  final List<AutoRoute> routes = [
+    AutoRoute(page: StartScreen.page, path: '/'),
+    AutoRoute(page: ProductDetailRoute.page),
+    AutoRoute(page: AuthRoute.page),
+  ];
+}
