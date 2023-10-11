@@ -39,7 +39,6 @@ class AppFlash {
           onTap: controller.dismiss,
           child: FlashBar(
               controller: controller,
-              enableVerticalDrag: true,
               margin: const EdgeInsets.symmetric(horizontal: 20),
               backgroundColor: AppColors.dark3,
               shape: RoundedRectangleBorder(
@@ -85,7 +84,6 @@ class AppFlash {
           onTap: controller.dismiss,
           child: FlashBar(
             controller: controller,
-            enableVerticalDrag: true,
             margin: const EdgeInsets.symmetric(horizontal: 20),
             backgroundColor: AppColors.dark3,
             shape:

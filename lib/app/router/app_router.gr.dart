@@ -18,8 +18,7 @@ import 'package:templateflutter/presentation/screens/start/start_screen.dart'
     as _i3;
 
 abstract class $AppRouter extends _i4.RootStackRouter {
-  $AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+  $AppRouter({super.navigatorKey});
 
   @override
   final Map<String, _i4.PageFactory> pagesMap = {
